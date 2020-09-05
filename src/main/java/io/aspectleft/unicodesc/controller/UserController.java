@@ -18,7 +18,12 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("by-course-code/{courseCode}")
-    public ResponseEntity<List<String>> getTakeCourseByCourseCode(@PathVariable String courseCode) {
+    public ResponseEntity<List<String>> getUserByCourseCode(@PathVariable String courseCode) {
         return ResponseEntity.status(HttpStatus.OK).body(userService.getUserByCourseCode(courseCode));
+    }
+
+    @GetMapping("search/{username}")
+    public ResponseEntity<List<String>> searchUserByUsername(@PathVariable String username) {
+        return ResponseEntity.status(HttpStatus.OK).body(userService.searchUser(username));
     }
 }

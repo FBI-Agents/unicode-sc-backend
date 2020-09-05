@@ -7,8 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TakeCourseRequest {
-    private String courseCode;
-    private String courseName;
+public class LocationResponse {
+    private Double latitude;
+    private Double longitude;
 
+    private String username;
 }
